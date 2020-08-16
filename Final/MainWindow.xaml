@@ -1,0 +1,35 @@
+﻿<Window x:Class="Final.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Holiday Mailer" Height="470.118" Width="800">
+    <Grid>
+        <Menu Height="441" VerticalAlignment="Top" HorizontalAlignment="Left" Width="794">
+            <MenuItem Header="_File">
+                <MenuItem Name="MenuAddOption" Header="_Add Recipient" Click="MenuAddOption_Click" />
+                <MenuItem Name="MenuViewOption"  Header="_View All Recipient" Click="MenuViewOption_Click"/>
+                <MenuItem Header="_Exit" Click="windowClose_onClick" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="MenuAboutOption_onClick" />
+            </MenuItem>
+        </Menu>
+        <Button Name="AttatchButton"  Content="Attatch File" Margin="117,375,0,0" Click="AttatchButton_Click" HorizontalAlignment="Left" Width="103" Height="36" VerticalAlignment="Top"/>
+        <RadioButton GroupName="Recipients" Content=" Recipients who sent you mail last year" VerticalAlignment="Top" Margin="248,89,0,0" HorizontalAlignment="Left" Width="230"/>
+        <RadioButton Name="AllRecipients" GroupName="Recipients" IsChecked="True" Content="All Recipients" VerticalAlignment="Top" Margin="117,89,0,0" HorizontalAlignment="Left" Width="111"/>
+        <Button Name="SendButton" Content="Send" Margin="625,375,0,0" Click="SendButton_Click" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+        <Label Content="Holiday Mailer" FontSize="32" Margin="10,25,0,0" Height="63" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Label Content="Body" Height="25" Width="56" Margin="29,175,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Subject" Height="25" Width="56" Margin="29,128,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox Name="SubjectInput" HorizontalAlignment="Left" Height="25" Margin="117,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="608"/>
+        <TextBox Name="BodyInput" HorizontalAlignment="Left" Height="183" Margin="117,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="608"/>
+        <Label Content="Recipients" Height="25" Margin="29,84,0,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" />
+        <Button x:Name="RemoveFile"  Content="Remove File" Margin="225,375,0,0" HorizontalAlignment="Left" Width="103" Height="36" VerticalAlignment="Top" Click="RemoveFile_Click"/>
+        <Label Name="FileAttatchementLabel" FontSize="16" VerticalAlignment="Center" Margin="343,375,0,30" Height="36" HorizontalAlignment="Left" Width="236"/>
+    </Grid>
+</Window>

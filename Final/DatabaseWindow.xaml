@@ -1,0 +1,30 @@
+﻿<Window x:Class="Final.DatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final"
+        mc:Ignorable="d"
+        Title="Mailing List" Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu Grid.ColumnSpan="2" Grid.RowSpan="2" Height="421" VerticalAlignment="Top" HorizontalAlignment="Left" Width="794">
+            <MenuItem Header="_Options">
+                <MenuItem Name="ClearMenuOption" Header="_Clear Database" Click="clearMenuOption_onMouseClick" />
+            </MenuItem>
+        </Menu>
+        <TextBox TextWrapping="Wrap" Name="LastNameFilter" Height="32px" Width="120" Margin="131,24,0,0" TextChanged="LastNameFilter_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Last Name Filter" Height="32px" Margin="26,26,0,0" HorizontalAlignment="Left" Width="99" VerticalAlignment="Top"/>
+        <DataGrid Name="ShowDatabaseContents" AutoGenerateColumns="False" Margin="25,69,0,0" Height="342" 
+                  VerticalAlignment="Top" HorizontalAlignment="Left" Width="735" 
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name"  Binding="{Binding First_Name}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Last_Name}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Sent Mail Last Year" Binding="{Binding HaveSentMail}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
